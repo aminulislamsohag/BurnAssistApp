@@ -1,0 +1,232 @@
+.view-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 25px;
+    background-color: #765c0c96;
+}
+
+.header div {
+    flex: 1;
+    text-align: center;
+}
+
+.body-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+.body-container {
+    position: relative;
+    width: 45%;
+    max-width: 100%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.body-image {
+    width: 100%;
+    height: auto;
+    margin-left: -110px;
+    max-width: 385px;
+}
+
+.input-field {
+    position: absolute;
+    width: 150px;
+    padding: 9px;
+    border-radius: 20px;
+    text-align: center;
+    border: 3px solid #ccc;
+}
+
+/* Positioning each input field */
+
+/* Adjust these positions to align with the body diagram */
+.head-input {
+    top: -16%; /* Adjust as needed */
+    left: 31%; /* Adjust as needed */
+}
+
+.front-body-input {
+    top: 20%; /* Adjust as needed */
+    left: 32%; /* Adjust as needed */
+}
+
+.back-body-input {
+    top: 45%; /* Adjust as needed */
+    left: 31%; /* Adjust as needed */
+}
+
+.hand-left-input {
+    top: 30%;
+    left: 2%; /* Adjust as needed */
+}
+
+.hand-right-input {
+    top: 30%; /* Adjust as needed */
+    left: 61%; /* Adjust as needed */
+}
+
+.leg-left-input {
+    top: 80%; /* Adjust as needed */
+    left: 8%; /* Adjust as needed */
+}
+
+.leg-right-input {
+    top: 80%; /* Adjust as needed */
+    left: 53%; /* Adjust as needed */
+}
+
+
+.summary-section {
+    display: flex;
+    width: 60%;
+}
+
+.tbsahuo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.summary-tbsa {
+    margin-top: -143px;
+    text-align: center;
+    font-size: 2.0em;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #cc2ec791;
+    width: 250px; /* Adjusted width */
+}
+
+.huo-input {
+    margin-bottom: -109px;
+    width: 247px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #8fcd7d;
+    border: 3px solid #ccc;
+    text-align: center;
+}
+
+.summary-process {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1;
+}
+
+.process-button {
+    display: block;
+    margin: 0 auto;
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    width: 200px; /* Adjusted width */
+    cursor: pointer;
+    text-align: center;
+}
+
+.process-button:hover {
+    background-color: #45a049;
+}
+
+.summary-predict {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.dropdown {
+    margin-top: -158px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.output-box {
+    margin-bottom: -90px;
+    height: 140px;
+    line-height: 110px;
+    text-align: center;
+    background-color: #a8e6a8;
+    border: 1px solid #d3d3d3;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 214px;
+    padding: 11px;
+    font-size: 21px;
+}
+
+
+
+
+
+
+
+
+
+.history-section {
+    margin-top: 12px;
+    width: 100%;
+    background-color: #cc2e2e7d;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 columns */
+    gap: 5px; /* Gap between the boxes */
+    background-color: #0dcaf04f;
+}
+
+.history-item {
+    margin-top: 5px;
+    text-align: left;
+    background-color: #f9f9f9;
+    font-size: 12px;
+    border: 1px solid #333; /* Adding a solid border around each box */
+    padding: 5px; /* Optional: Adding padding inside each box */
+    border-radius: 5px; /* Optional: Rounding the corners of the boxes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adding a slight shadow for better visual effect */
+}
+
+.history-item p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+.history-item.with-data {
+    background-color: #7db97d; /* Light green for boxes with data */
+}
+
+.history-item.no-data {
+    background-color: #ffe6e6; /* Light red for boxes without data (N/A) */
+}
+
+
