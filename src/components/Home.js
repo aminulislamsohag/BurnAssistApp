@@ -42,7 +42,7 @@ export default function Home() {
   //fatch all patient list form database
   const fetchPatients = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/patients');//reponse list data
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/patients`);//reponse list data
       console.log(response.data); // Log the data to ensure it's correct
       setPatients(response.data); // Store patients data in this state variable from database
     } catch (error) {
@@ -77,7 +77,7 @@ export default function Home() {
        const patientData = { ...newPatient, admitdate: formattedDate };
 
        //patient data sent to API for save in database
-      const response = await axios.post('http://localhost:8080/api/addpatient', patientData);//respose status code
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/addpatient`, patientData);//respose status code
       if (response.status === 201) { // assuming 201 is the success status
         const addedPatient = response.data;
 
@@ -107,7 +107,7 @@ export default function Home() {
   const confirmDeletePatient = async () => {
     if (patientToDelete) {
       try {
-        await axios.delete(`http://localhost:8080/api/deletepatient/${patientToDelete.id}`);
+        await axios.delete(`${process.env.REACT_APP_API_URL}/api/deletepatient/${patientToDelete.id}`);
         setPatients(patients.filter(p => p.id !== patientToDelete.id));
         setShowDeleteModal(false);
       } catch (error) {
@@ -122,7 +122,7 @@ export default function Home() {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/search?query=${searchQuery}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/search?query=${searchQuery}`);
       setPatients(response.data);
     } catch (error) {
       console.error('Error searching for patient data:', error);
