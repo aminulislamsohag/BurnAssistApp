@@ -10,13 +10,16 @@ export default function Login() {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/users/login', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/users/login`, {
         username,
         password
       });
+
       console.log('Login INFO:', response.data);
       if(response.data===1){
       setMessage('Login successful');

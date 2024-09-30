@@ -70,7 +70,7 @@ export default function View() {
     // Fetch existing burn data from backend
     const fetchBurnData = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/patientBurn/${patientid}`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/patientBurn/${patientid}`);
             const burnData = response.data;
             if (burnData) {
                 setInputs({
@@ -92,7 +92,7 @@ export default function View() {
     // Fetch patient history from backend
     const fetchHistory = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/history/${patientid}`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/history/${patientid}`);
             setHistory(response.data); // Make sure the data is set correctly
         } catch (error) {
             console.error('Error fetching history:', error);
@@ -107,7 +107,7 @@ export default function View() {
             const huo = inputs.hourlyUrineOutput;
 
             // Call Fuzzy Logic API to predict IFR
-            const predictResponse = await axios.get('http://localhost:8080/api/predict', {
+            const predictResponse = await axios.get(`${process.env.REACT_APP_API_URL}/api/predict`, {
                 params: {
                     tbsa: tbsa,
                     urineOutput: huo
@@ -119,7 +119,7 @@ export default function View() {
             setCurrentIFR(ifr);
             
     // Save patient data (patientid, tbsa, huo, ifr)
-    await axios.post('http://localhost:8080/api/savePatientData', {
+    await axios.post(`${process.env.REACT_APP_API_URL}/api/savePatientData`, {
         patientId: patientid,
         tbsa: tbsa, // Save the manually entered or calculated TBSA
         huo,
@@ -130,7 +130,7 @@ export default function View() {
    fetchHistory();
 
              // Save patient data (burn percentages) to the backend  
-        await axios.post('http://localhost:8080/api/patientBurn/save', {
+        await axios.post(`${process.env.REACT_APP_API_URL}/api/patientBurn/save`, {
             patientId: patientid,
             head: inputs.head,
             frontBody: inputs.frontBody,
